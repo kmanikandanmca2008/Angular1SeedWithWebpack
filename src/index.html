@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link rel="stylesheet" href="/components/carousel.css" />
+ 
+  <meta charset="utf-8" />
+  <title>app</title>
+  <base href="/" />
+</head>
+
+<body layout="column">
+
+  <md-toolbar class="md-tall" >
+    <div layout="column" layout-align="center center">
+  <div flex><img src="images/usr-70_70.jpg"/></div>
+  <div flex> <h1> Toolbar </h1></div>
+</div>
+    
+  </md-toolbar>
+
+
+  <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" color="accent">
+    <md-nav-item md-nav-sref="home" name="home">
+      Home
+    </md-nav-item>
+    <md-nav-item md-nav-sref="hello" name="hello">
+      Hello
+    </md-nav-item>
+    <md-nav-item md-nav-sref="about" name="about">
+      About
+    </md-nav-item>
+    <md-nav-item md-nav-sref="two" name="page3">
+      Page Two
+    </md-nav-item>
+    <md-nav-item md-nav-sref="lazy" name="lazy">
+      lazy
+    </md-nav-item>
+    <md-nav-item md-nav-sref="lazy.foo" name="lazy.foo">
+      lazy.foo
+    </md-nav-item>
+    <md-nav-item md-nav-sref="lazy.bar" name="lazy.bar">
+      lazy.bar
+    </md-nav-item>
+    <div>
+      <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
+        Toggle left
+      </md-button>
+    </div>'
+    <!-- these require actual routing with ui-router or ng-route, so they
+      won't work in the demo
+      <md-nav-item md-nav-href="#page4" name="page5">Page Four</md-nav-item>
+      <md-nav-item md-nav-sref="app.page5" name="page4">Page Five</md-nav-item>
+      You can also add options for the <code>ui-sref-opts</code> attribute.
+      <md-nav-item md-nav-sref="page6" sref-opts="{reload:true, notify:true}">
+        Page Six
+      </md-nav-item>
+      -->
+  </md-nav-bar>
+  <section layout="row" flex>
+    <side-nav></side-nav>
+    <md-content flex layout-padding>
+      <ui-view name="content"></ui-view>
+    </md-content>
+  </section>
+
+    <md-toolbar class="" >
+    <div layout="column" layout-align="center center">
+  <div flex><b> Footer text </b></div>
+  <div flex> <p> Footer subtext </p></div>
+</div>
+    
+  </md-toolbar>
+
+   <script src="/components/carousel.js"></script>
+</body>
+
+</html>
